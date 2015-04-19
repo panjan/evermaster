@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Evermaster - Do stuff the right way.</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body class="gradient">
+    <div class="centered">
+        <h1>Do your job like a master.</h1>
+        <h4>Type in what you are working on for instant enlightenment.</h4>
+        <form name="formOfEnlightenment" onsubmit="getEnlightenment()">
+            <input type="text" name="topic">
+            <input type="submit" value="Get enlightenment">
+        </form>
+        <p><font size="1">Warning: Improves quality of work by 42%</font></p>
+    </div>
+</body>
+
+<script type="application/javascript">
+    'use strict'
+
+    function getEnlightenment() {
+        var topic = document.forms["formOfEnlightenment"].elements["topic"].value;
+        if(topic == null) return;
+        if(topic == '') return;
+        var urlEncodedTopic = encodeURI(topic);
+        var linkToBestPractices = 'https://www.google.com/#q=' + urlEncodedTopic + '%20best%20practices';
+        window.open(linkToBestPractices);
+        var linkToTools = 'https://www.google.com/#q=' + urlEncodedTopic + '%20tools';
+        window.open(linkToTools);
+    }
+</script>
+
+</html>
